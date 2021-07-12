@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title>The Brick Breaker Game</title>
+
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #676767;
+  font-family: 'Open Sans', sans-serif;
+}
+table {
+  background: #cfcfcf;
+  border-radius: 0.25em;
+  border-collapse: collapse;
+  margin: 1em;
+}
+th {
+  border-bottom: 1px solid #364043;
+  color: #000000;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+td {
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  padding: 0.65em 1em;
+}
+.disabled td {
+  color: #ffffff;
+}
+tbody tr {
+  transition: background 0.25s ease;
+}
+tbody tr:hover {
+  background: #f1f1f1;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+  input[type=submit] {
+  padding: 5px 15px;
+  background: #ffffff;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: 40px; 
+        width: 130px; 
+  }
+</style>      
+    
+    
+</head>
+
+<body>
+  <br>
+  <br>
+  <h1 style="text-align: center;font-size: 50px;color:white ;">Leaderboard</h1>
+  <br>
+  <br>
+    <table class="center" style="width:1000px">
+        <thead>
+          <tr style="font-size: 25px;">
+            <th>Rank
+            <th>Player Name
+            <th>Score
+        </thead>
+        <tbody>
+        {% for item in range(0,10) %}
+          <tr>
+            <td>{{item+1}}
+            <td>{{data[item][0]}}
+            <td>{{data[item][1]}}
+        {% endfor %}
+        </tbody>
+      </table> 
+      <div align="center">
+      <a href="/" ><input type="submit" value="New Player"></a>
+      <a href="/index.html" ><input type="submit" value="Restart" ></a>
+    </div>
+</body>
+</html>
